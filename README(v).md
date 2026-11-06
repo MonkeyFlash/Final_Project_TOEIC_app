@@ -17,7 +17,7 @@
 |---|---|---|---|
 | 1 | Trần Đông Bình | 745105011 | Trưởng nhóm |
 | 2 | [Tên] | [Mã SV] | Thành viên |
-| 3 | [Tên] | [Mã SV] | Thành viên |
+| 3 | Vũ Thảo Ly | 745105064 | Thành viên |
 | 4 | Trần Văn Sơn | 745105082 | Thành viên |
 
 ## 3. Các chức năng chính (Main Features)
