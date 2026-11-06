@@ -17,7 +17,7 @@ An Android application designed to help users improve their English skills and p
 | No. | Full Name        | Student ID  | Role        |
 |---|------------------|-------------|-------------|
 | 1 | [Trần Đông Bình] | [745105011] | Team Leader |
-| 2 | [Name]           | [ID]        | Developer   |
+| 2 | [Phan Thị Thương]| [745105095] | Developer   |
 | 3 | [Name]           | [ID]        | Developer   |
 | 4 | [Name]           | [ID]        | Developer   |
 
