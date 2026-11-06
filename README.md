@@ -145,14 +145,15 @@ To ensure smooth collaboration and maintain code quality, all team members shoul
 - Update task progress regularly so that everyone knows what has been completed and what is still in progress.
 - Inform the team leader when facing difficulties or delays.
 
-### 8.2. Git & GitHub
+## 8.2. Git & GitHub
 - All source code must be uploaded and managed through the team's GitHub repository.
 - The `main` branch is the official version of the project. Do not modify it directly.
 - Before working on a feature, create a separate branch from the latest `main` branch.
 - Use the following branch naming format: `feature/feature-name`.
-- Commit and push your changes regularly instead of waiting until the entire feature is finished.
+- Commit and push your changes regularly using clear and meaningful commit messages.
 - Before starting new work, pull the latest changes to avoid working with outdated code.
 - When a feature is completed, create a Pull Request (PR) to request merging it into `main`.
+- All Pull Requests must be reviewed and approved by the team leader before merging.
 
 ### 8.3. Coding Rules
 - Use Java for application logic and XML for user interfaces.
