@@ -17,7 +17,7 @@
 | STT | Họ và tên | Mã sinh viên | Vai trò |
 |---|---|---|---|
 | 1 | Trần Đông Bình | 745105011 | Trưởng nhóm |
-| 2 | [Tên] | [Mã SV] | Thành viên |
+| 2 | Phan Thị Thương| 745105095 | Thành viên  |
 | 3 | [Tên] | [Mã SV] | Thành viên |
 | 4 | Trần Văn Sơn | 745105082 | Thành viên |
 
