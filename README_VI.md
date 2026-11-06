@@ -1,4 +1,5 @@
 # ỨNG DỤNG HỌC TOEIC
+[🇻🇳 Tiếng Việt](README_VI.md) | [🇬🇧 English](README.md)
 
 Ứng dụng Android được phát triển nhằm hỗ trợ người dùng cải thiện kỹ năng tiếng Anh và chuẩn bị cho kỳ thi TOEIC (Test of English for International Communication).
 

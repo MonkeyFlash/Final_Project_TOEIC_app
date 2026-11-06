@@ -1,5 +1,6 @@
 
 # TOEIC Learning App
+[🇻🇳 Tiếng Việt](README_VI.md) | [🇬🇧 English](README.md)
 
 An Android application designed to help users improve their English skills and prepare for the TOEIC (Test of English for International Communication) exam.
 
@@ -19,7 +20,7 @@ An Android application designed to help users improve their English skills and p
 | 1 | [Trần Đông Bình] | [745105011] | Team Leader |
 | 2 | [Name]           | [ID]        | Developer   |
 | 3 | [Name]           | [ID]        | Developer   |
-| 4 | [Name]           | [ID]        | Developer   |
+| 4 | [Trần Văn Sơn]           | [ 745105082 ]        | Developer   |
 
 ## 3. Main Features
 
