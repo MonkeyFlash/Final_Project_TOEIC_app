@@ -19,7 +19,7 @@ An Android application designed to help users improve their English skills and p
 |---|------------------|-------------|-------------|
 | 1 | [Trần Đông Bình] | [745105011] | Team Leader |
 | 2 | [Phan Thị Thương]           | [745105095]        | Developer   |
-| 3 | [Name]           | [ID]        | Developer   |
+| 3 | [Vũ Thảo Ly]           | [745105064]        | Developer   |
 | 4 | [Trần Văn Sơn]           | [ 745105082 ]        | Developer   |
 
 ## 3. Main Features
