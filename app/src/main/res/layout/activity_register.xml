@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
     android:fillViewport="true"
+    android:background="#FFFFFF"
     android:scrollbars="none">
 
     <LinearLayout
@@ -11,27 +12,26 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Header -->
+        <!-- Blue Header -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="280dp"
             android:background="@drawable/bg_blue_gradient"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="20dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="🎧"
-                android:textSize="60sp" />
+            <ImageView
+                android:layout_width="225dp"
+                android:layout_height="152dp"
+                android:src="@drawable/img" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TOEIC MASTER"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="27sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -39,8 +39,8 @@
                 android:layout_height="wrap_content"
                 android:text="Learn Today. Score Tomorrow."
                 android:textColor="#E3F0FF"
-                android:textSize="13sp"
-                android:layout_marginTop="5dp" />
+                android:textSize="14sp"
+                android:layout_marginTop="8dp" />
 
         </LinearLayout>
 
@@ -48,7 +48,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-25dp"
+            android:layout_marginTop="-28dp"
             android:background="@drawable/bg_white_card"
             android:elevation="8dp"
             android:orientation="vertical"
@@ -69,7 +69,7 @@
                 android:textColor="@color/text_gray"
                 android:textSize="14sp"
                 android:layout_marginTop="5dp"
-                android:layout_marginBottom="20dp" />
+                android:layout_marginBottom="22dp" />
 
             <!-- Full Name -->
             <EditText
@@ -79,7 +79,7 @@
                 android:background="@drawable/bg_input"
                 android:drawableStart="@drawable/baseline_how_to_reg_24"
                 android:drawablePadding="12dp"
-                android:hint="Full Name"
+                android:hint="Username"
                 android:inputType="textPersonName"
                 android:paddingHorizontal="15dp"
                 android:textColor="@color/text_dark"
@@ -107,7 +107,7 @@
                 android:id="@+id/btnRegister"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="22dp"
                 android:background="@drawable/bg_primary_button"
                 android:backgroundTint="@null"
                 android:text="Sign Up"

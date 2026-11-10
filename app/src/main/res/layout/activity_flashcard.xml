@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F8FD">
+
+    <!-- HEADER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@drawable/bg_blue_gradient"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="‹"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Office &amp; Business"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvWordProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12/60"
+                android:textColor="#DCEBFF"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text=" "
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <!-- FLASHCARD CONTENT -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- FLASHCARD -->
+        <LinearLayout
+            android:id="@+id/cardFlashcard"
+            android:layout_width="match_parent"
+            android:layout_height="370dp"
+            android:background="@drawable/bg_white_card"
+            android:elevation="3dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- SPEAKER -->
+            <TextView
+                android:id="@+id/btnSpeaker"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="end"
+                android:background="@drawable/bg_card_blue"
+                android:gravity="center"
+                android:text="🔊"
+                android:textSize="22sp" />
+
+            <!-- WORD -->
+            <TextView
+                android:id="@+id/tvWord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Deadline"
+                android:textColor="#101B42"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <!-- PRONUNCIATION -->
+            <TextView
+                android:id="@+id/tvPronunciation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="/ˈded.laɪn/"
+                android:textColor="#596783"
+                android:textSize="18sp" />
+
+            <!-- TYPE -->
+            <TextView
+                android:id="@+id/tvWordType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="(noun)"
+                android:textColor="#8798B5"
+                android:textSize="14sp" />
+
+            <!-- DIVIDER -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="18dp"
+                android:background="#E4ECF7" />
+
+            <!-- MEANING -->
+            <TextView
+                android:id="@+id/tvMeaning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="The latest time by which something must be done"
+                android:textColor="#101B42"
+                android:textSize="18sp"
+                android:lineSpacingExtra="5dp" />
+
+            <!-- EXAMPLE -->
+            <TextView
+                android:id="@+id/tvExample"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:background="@drawable/bg_card_blue"
+                android:padding="14dp"
+                android:text="We need to submit the report before the deadline."
+                android:textColor="#233B69"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                android:lineSpacingExtra="4dp" />
+
+        </LinearLayout>
+
+        <!-- FLIP GUIDE -->
+        <TextView
+            android:id="@+id/tvFlip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="14dp"
+            android:text="↻  Tap to flip"
+            android:textColor="#8798B5"
+            android:textSize="14sp" />
+
+        <!-- REVIEW BUTTONS -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:orientation="horizontal">
+
+            <!-- EASY -->
+            <Button
+                android:id="@+id/btnEasy"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:backgroundTint="#24B58A"
+                android:minWidth="0dp"
+                android:text="✓ Easy\n3 days"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <!-- HARD -->
+            <Button
+                android:id="@+id/btnHard"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="4dp"
+                android:backgroundTint="#F3A43B"
+                android:minWidth="0dp"
+                android:text="! Hard\n10–20 min"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <!-- CAN'T REMEMBER -->
+            <Button
+                android:id="@+id/btnForgot"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:backgroundTint="#F05252"
+                android:minWidth="0dp"
+                android:text="✕ Can't\nRemember\n1–5 min"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- BOTTOM NAVIGATION -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@drawable/bg_blue_gradient"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!-- HOME -->
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⌂"
+                android:textColor="#DCEBFF"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textColor="#DCEBFF"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+        <!-- LEARN -->
+        <LinearLayout
+            android:id="@+id/navLearn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="♧"
+                android:textColor="#FFFFFF"
+                android:textSize="23sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Learn"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+        <!-- STATS -->
+        <LinearLayout
+            android:id="@+id/navStats"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="▥"
+                android:textColor="#DCEBFF"
+                android:textSize="23sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stats"
+                android:textColor="#DCEBFF"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+        <!-- PROFILE -->
+        <LinearLayout
+            android:id="@+id/navProfile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="♙"
+                android:textColor="#DCEBFF"
+                android:textSize="23sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textColor="#DCEBFF"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
