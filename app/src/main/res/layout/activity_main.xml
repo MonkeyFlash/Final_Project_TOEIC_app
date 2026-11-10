@@ -376,7 +376,7 @@
 
                 <Button
                     android:id="@+id/btnStartMockTest"
-                    android:layout_width="75dp"
+                    android:layout_width="95dp"
                     android:layout_height="45dp"
                     android:background="@drawable/bg_primary_button"
                     android:backgroundTint="@null"
