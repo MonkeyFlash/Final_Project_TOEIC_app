@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F0F7FF">
+
+    <!-- HEADER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_blue_gradient"
+        android:paddingHorizontal="12dp">
+
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="42dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="‹"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvPartTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Part 1 · Photographs"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="42dp"
+            android:layout_height="1dp" />
+
+    </LinearLayout>
+
+    <!-- CONTENT -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- QUESTION NUMBER + BOOKMARK -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvQuestionNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Question 3/6"
+                    android:textColor="#101B42"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/btnBookmark"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:padding="4dp"
+                    android:src="@android:drawable/btn_star_big_off"
+                    android:contentDescription="Bookmark" />
+
+            </LinearLayout>
+
+            <!-- QUESTION IMAGE -->
+            <ImageView
+                android:id="@+id/imgListening"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:layout_marginTop="8dp"
+                android:background="#DCEAF5"
+                android:scaleType="centerCrop"
+                android:src="@android:drawable/ic_menu_gallery"
+                android:contentDescription="Listening question photograph" />
+
+            <!-- AUDIO PLAYER CARD -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="116dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_white_card"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:elevation="2dp">
+
+                <!-- PLAY + PROGRESS -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/btnPlayAudio"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:background="@drawable/bg_button_blue"
+                        android:gravity="center"
+                        android:text="▶"
+                        android:textColor="#FFFFFF"
+                        android:textSize="23sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="8dp">
+
+                        <SeekBar
+                            android:id="@+id/seekAudio"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:max="100"
+                            android:progress="35"
+                            android:progressTint="#2585F7"
+                            android:thumbTint="#2585F7"
+                            android:progressBackgroundTint="#DCE5F2" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvAudioTime"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="0:12 / 0:35"
+                        android:textColor="#71809B"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E8EDF5" />
+
+                <!-- REPLAY + SPEED -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="4dp">
+
+                    <TextView
+                        android:id="@+id/btnReplay"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="◴   Replay"
+                        android:textColor="#425779"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/btnSpeed"
+                        android:layout_width="85dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_speed_button"
+                        android:gravity="center"
+                        android:text="1.0x  ▾"
+                        android:textColor="#17294D"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- ANSWER OPTIONS -->
+            <LinearLayout
+                android:id="@+id/layoutAnswers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <!-- OPTION A -->
+                <LinearLayout
+                    android:id="@+id/optionA"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="7dp"
+                    android:background="@drawable/bg_answer_option"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp">
+
+                    <RadioButton
+                        android:id="@+id/rbA"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:buttonTint="#AEBFD4" />
+
+                    <TextView
+                        android:layout_width="25dp"
+                        android:layout_height="wrap_content"
+                        android:text="A"
+                        android:textColor="#101B42"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvAnswerA"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="The man is using a computer."
+                        android:textColor="#101B42"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+                <!-- OPTION B -->
+                <LinearLayout
+                    android:id="@+id/optionB"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="7dp"
+                    android:background="@drawable/bg_answer_selected"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp">
+
+                    <RadioButton
+                        android:id="@+id/rbB"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:checked="true"
+                        android:buttonTint="#2585F7" />
+
+                    <TextView
+                        android:layout_width="25dp"
+                        android:layout_height="wrap_content"
+                        android:text="B"
+                        android:textColor="#101B42"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvAnswerB"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="The man is talking to his colleagues."
+                        android:textColor="#101B42"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+                <!-- OPTION C -->
+                <LinearLayout
+                    android:id="@+id/optionC"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="7dp"
+                    android:background="@drawable/bg_answer_option"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp">
+
+                    <RadioButton
+                        android:id="@+id/rbC"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:buttonTint="#AEBFD4" />
+
+                    <TextView
+                        android:layout_width="25dp"
+                        android:layout_height="wrap_content"
+                        android:text="C"
+                        android:textColor="#101B42"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvAnswerC"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="The people are having lunch."
+                        android:textColor="#101B42"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+                <!-- OPTION D -->
+                <LinearLayout
+                    android:id="@+id/optionD"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="7dp"
+                    android:background="@drawable/bg_answer_option"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="10dp">
+
+                    <RadioButton
+                        android:id="@+id/rbD"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:buttonTint="#AEBFD4" />
+
+                    <TextView
+                        android:layout_width="25dp"
+                        android:layout_height="wrap_content"
+                        android:text="D"
+                        android:textColor="#101B42"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvAnswerD"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="The woman is writing on a board."
+                        android:textColor="#101B42"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- SUBMIT BUTTON -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:gravity="center"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:background="#F0F7FF">
+
+        <TextView
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="@drawable/bg_button_blue"
+            android:gravity="center"
+            android:text="Submit"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>
