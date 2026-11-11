@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F0F7FF">
+
+    <!-- HEADER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_blue_gradient"
+        android:paddingHorizontal="12dp">
+
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="42dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="‹"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvPartTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Part 7 · Reading"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- TIMER -->
+        <LinearLayout
+            android:layout_width="105dp"
+            android:layout_height="38dp"
+            android:background="@drawable/bg_timer"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="◷"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="12:45"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- MAIN CONTENT -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- EMAIL PASSAGE CARD -->
+            <LinearLayout
+                android:id="@+id/cardPassage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_white_card"
+                android:orientation="vertical"
+                android:padding="14dp"
+                android:elevation="2dp">
+
+                <!-- EMAIL INFORMATION -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- FROM -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="55dp"
+                            android:layout_height="wrap_content"
+                            android:text="From:"
+                            android:textColor="#71809B"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/tvFrom"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="David Kim &lt;david.kim@globaltech.com&gt;"
+                            android:textColor="#101B42"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                    <!-- TO -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="55dp"
+                            android:layout_height="wrap_content"
+                            android:text="To:"
+                            android:textColor="#71809B"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/tvTo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="All Staff"
+                            android:textColor="#101B42"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                    <!-- DATE -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="55dp"
+                            android:layout_height="wrap_content"
+                            android:text="Date:"
+                            android:textColor="#71809B"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/tvDate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="May 14, 2024, 10:30 AM"
+                            android:textColor="#101B42"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                    <!-- SUBJECT -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="55dp"
+                            android:layout_height="wrap_content"
+                            android:text="Subject:"
+                            android:textColor="#71809B"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/tvSubject"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Meeting Rescheduled"
+                            android:textColor="#101B42"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- DIVIDER -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#DCE5F2" />
+
+                <!-- EMAIL BODY -->
+                <TextView
+                    android:id="@+id/tvEmailBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="3dp"
+                    android:text="Dear Team,
+
+The project meeting originally scheduled for Thursday, May 16 has been rescheduled to Friday, May 17 at 10:00 AM due to a scheduling conflict. The meeting will still be held in Conference Room B.
+
+Please let me know if you have any questions.
+
+Best regards,
+David Kim
+Project Manager"
+                    android:textColor="#101B42"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <!-- QUESTION -->
+            <TextView
+                android:id="@+id/tvQuestionNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="Question 1/54"
+                android:textColor="#71809B"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="12dp"
+                android:text="What is the purpose of the email?"
+                android:textColor="#101B42"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- ANSWER OPTIONS -->
+            <RadioGroup
+                android:id="@+id/rgAnswers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- OPTION A -->
+                <LinearLayout
+                    android:id="@+id/optionA"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/bg_answer_option"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="8dp">
+
+                    <RadioButton
+                        android:id="@+id/rbA"
+                        android:layout_width="35dp"
+                        android:layout_height="40dp"
+                        android:buttonTint="#AEBFD4" />
+
+                    <TextView
+                        android:layout_width="22dp"
+                        android:layout_height="wrap_content"
+                        android:text="A"
+                        android:textColor="#101B42"
+                        android:textStyle="bold"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvAnswerA"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="To invite staff to a new project."
+                        android:textColor="#101B42"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+                <!-- OPTION B -->
+                <LinearLayout
+                    android:id="@+id/optionB"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/bg_answer_selected"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="8dp">
+
+                    <RadioButton
+                        android:id="@+id/rbB"
+                        android:layout_width="35dp"
+                        android:layout_height="40dp"
+                        android:checked="true"
+                        android:buttonTint="#2585F7" />
+
+                    <TextView
+                        android:layout_width="22dp"
+                        android:layout_height="wrap_content"
+                        android:text="B"
+                        android:textColor="#101B42"
+                        android:textStyle="bold"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvAnswerB"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="To inform about a changed meeting time."
+                        android:textColor="#101B42"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+                <!-- OPTION C -->
+                <LinearLayout
+                    android:id="@+id/optionC"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/bg_answer_option"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="8dp">
+
+                    <RadioButton
+                        android:id="@+id/rbC"
+                        android:layout_width="35dp"
+                        android:layout_height="40dp"
+                        android:buttonTint="#AEBFD4" />
+
+                    <TextView
+                        android:layout_width="22dp"
+                        android:layout_height="wrap_content"
+                        android:text="C"
+                        android:textColor="#101B42"
+                        android:textStyle="bold"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvAnswerC"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="To request feedback on a project."
+                        android:textColor="#101B42"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+                <!-- OPTION D -->
+                <LinearLayout
+                    android:id="@+id/optionD"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/bg_answer_option"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="8dp">
+
+                    <RadioButton
+                        android:id="@+id/rbD"
+                        android:layout_width="35dp"
+                        android:layout_height="40dp"
+                        android:buttonTint="#AEBFD4" />
+
+                    <TextView
+                        android:layout_width="22dp"
+                        android:layout_height="wrap_content"
+                        android:text="D"
+                        android:textColor="#101B42"
+                        android:textStyle="bold"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvAnswerD"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="To announce a new team member."
+                        android:textColor="#101B42"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- BOTTOM PREVIOUS / NEXT -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:background="#F0F7FF">
+
+        <TextView
+            android:id="@+id/btnPrevious"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/bg_white_card"
+            android:gravity="center"
+            android:text="Previous"
+            android:textColor="#2585F7"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/bg_button_blue"
+            android:gravity="center"
+            android:text="Next"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F0F7FF">
+
+    <!-- HEADER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        android:background="@drawable/bg_blue_gradient">
+
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="‹"
+            android:textSize="36sp"
+            android:textColor="#FFFFFF"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Full Mock Test"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TOEIC · 200 Questions"
+                android:textColor="#DCEBFF"
+                android:textSize="11sp"/>
+
+        </LinearLayout>
+
+        <!-- TIMER -->
+        <LinearLayout
+            android:layout_width="112dp"
+            android:layout_height="36dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="◷"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"/>
+
+            <TextView
+                android:id="@+id/tvTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="01:45:20"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- SCROLLABLE QUESTION AREA -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- QUESTION PROGRESS -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="8dp"
+                android:background="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tvQuestionProgress"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Question 58/200"
+                        android:textColor="#101B42"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tvProgressPercent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="29%"
+                        android:textColor="#1678EF"
+                        android:textSize="13sp"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/progressMockTest"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:layout_marginTop="10dp"
+                    android:max="200"
+                    android:progress="58"
+                    android:progressTint="#2585F7"
+                    android:progressBackgroundTint="#E2EAF4"/>
+
+            </LinearLayout>
+
+            <!-- LISTENING / READING TABS -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:background="#FFFFFF">
+
+                <TextView
+                    android:id="@+id/tabListening"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Listening"
+                    android:textColor="#0879F9"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_tab_selected"/>
+
+                <TextView
+                    android:id="@+id/tabReading"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Reading"
+                    android:textColor="#64748B"
+                    android:textSize="14sp"
+                    android:background="@drawable/bg_tab_unselected"/>
+
+            </LinearLayout>
+
+            <!-- QUESTION CONTENT -->
+            <LinearLayout
+                android:id="@+id/layoutQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- QUESTION TITLE -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvQuestion"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="58. What does the woman suggest?"
+                        android:textColor="#101B42"
+                        android:textSize="15sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/btnBookmark"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:gravity="center"
+                        android:text="♧"
+                        android:textColor="#1678EF"
+                        android:textSize="24sp"/>
+
+                </LinearLayout>
+
+                <!-- ANSWERS -->
+                <RadioGroup
+                    android:id="@+id/rgAnswers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/rbA"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="4dp"
+                        android:background="@drawable/bg_answer_option"
+                        android:buttonTint="#AEBFD4"
+                        android:paddingHorizontal="8dp"
+                        android:text="A    Taking a later train."
+                        android:textColor="#101B42"
+                        android:textSize="14sp"/>
+
+                    <RadioButton
+                        android:id="@+id/rbB"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="4dp"
+                        android:background="@drawable/bg_answer_option"
+                        android:buttonTint="#AEBFD4"
+                        android:paddingHorizontal="8dp"
+                        android:text="B    Meeting at a different station."
+                        android:textColor="#101B42"
+                        android:textSize="14sp"/>
+
+                    <RadioButton
+                        android:id="@+id/rbC"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="4dp"
+                        android:background="@drawable/bg_answer_selected"
+                        android:buttonTint="#2585F7"
+                        android:checked="true"
+                        android:paddingHorizontal="8dp"
+                        android:text="C    Checking the schedule online."
+                        android:textColor="#101B42"
+                        android:textSize="14sp"/>
+
+                    <RadioButton
+                        android:id="@+id/rbD"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_answer_option"
+                        android:buttonTint="#AEBFD4"
+                        android:paddingHorizontal="8dp"
+                        android:text="D    Buying a return ticket."
+                        android:textColor="#101B42"
+                        android:textSize="14sp"/>
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <!-- QUESTION NAVIGATOR -->
+            <LinearLayout
+                android:id="@+id/layoutNavigator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp"
+                android:background="#FFFFFF">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:text="Question Navigator"
+                    android:textColor="#101B42"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+
+                <!-- LEGEND -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="9dp"
+                        android:layout_height="9dp"
+                        android:background="@drawable/bg_nav_answered"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="9dp"
+                        android:text="Answered"
+                        android:textSize="9sp"
+                        android:textColor="#334155"/>
+
+                    <View
+                        android:layout_width="9dp"
+                        android:layout_height="9dp"
+                        android:background="@drawable/bg_nav_unanswered"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="9dp"
+                        android:text="Unanswered"
+                        android:textSize="9sp"
+                        android:textColor="#334155"/>
+
+                    <View
+                        android:layout_width="9dp"
+                        android:layout_height="9dp"
+                        android:background="@drawable/bg_nav_flagged"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="Flagged"
+                        android:textSize="9sp"
+                        android:textColor="#334155"/>
+
+                </LinearLayout>
+
+                <!-- NAVIGATOR GRID -->
+                <GridLayout
+                    android:id="@+id/gridQuestionNavigator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="10"
+                    android:rowCount="2"
+                    android:alignmentMode="alignMargins"
+                    android:useDefaultMargins="true"
+                    android:layout_marginTop="10dp">
+
+                    <!-- ROW 1 -->
+                    <TextView
+                        android:id="@+id/nav1"
+                        style="@style/MockNavButton"
+                        android:background="@drawable/bg_nav_answered"
+                        android:text="1"/>
+
+                    <TextView
+                        android:id="@+id/nav2"
+                        style="@style/MockNavButton"
+                        android:background="@drawable/bg_nav_answered"
+                        android:text="2"/>
+
+                    <TextView
+                        android:id="@+id/nav3"
+                        style="@style/MockNavButton"
+                        android:background="@drawable/bg_nav_current"
+                        android:text="3"/>
+
+                    <TextView
+                        android:id="@+id/nav4"
+                        style="@style/MockNavButton"
+                        android:background="@drawable/bg_nav_unanswered"
+                        android:text="4"/>
+
+                    <TextView
+                        android:id="@+id/nav5"
+                        style="@style/MockNavButton"
+                        android:background="@drawable/bg_nav_answered"
+                        android:text="5"/>
+
+                    <TextView
+                        android:id="@+id/nav6"
+                        style="@style/MockNavButton"
+                        android:background="@drawable/bg_nav_flagged"
+                        android:text="6"/>
+
+                    <TextView
+                        android:id="@+id/nav7"
+                        style="@style/MockNavButton"
+                        android:background="@drawable/bg_nav_unanswered"
+                        android:text="7"/>
+
+                    <TextView
+                        android:id="@+id/nav8"
+                        style="@style/MockNavButton"
+                        android:background="@drawable/bg_nav_unanswered"
+                        android:text="8"/>
+
+                    <TextView
+                        android:id="@+id/nav9"
+                        style="@style/MockNavButton"
+                        android:background="@drawable/bg_nav_unanswered"
+                        android:text="9"/>
+
+                    <TextView
+                        android:id="@+id/nav10"
+                        style="@style/MockNavButton"
+                        android:background="@drawable/bg_nav_unanswered"
+                        android:text="10"/>
+
+                    <!-- ROW 2 -->
+                    <TextView
+                        android:id="@+id/nav11"
+                        style="@style/MockNavButton"
+                        android:background="@drawable/bg_nav_unanswered"
+                        android:text="11"/>
+
+                    <TextView
+                        android:id="@+id/nav12"
+                        style="@style/MockNavButton"
+                        android:background="@drawable/bg_nav_answered"
+                        android:text="12"/>
+
+                    <TextView
+                        android:id="@+id/nav13"
+                        style="@style/MockNavButton"
+                        android:background="@drawable/bg_nav_unanswered"
+                        android:text="13"/>
+
+                    <TextView
+                        android:id="@+id/nav14"
+                        style="@style/MockNavButton"
+                        android:background="@drawable/bg_nav_unanswered"
+                        android:text="14"/>
+
+                    <TextView
+                        android:id="@+id/nav15"
+                        style="@style/MockNavButton"
+                        android:background="@drawable/bg_nav_answered"
+                        android:text="15"/>
+
+                    <TextView
+                        android:id="@+id/nav16"
+                        style="@style/MockNavButton"
+                        android:background="@drawable/bg_nav_unanswered"
+                        android:text="16"/>
+
+                    <TextView
+                        android:id="@+id/nav17"
+                        style="@style/MockNavButton"
+                        android:background="@drawable/bg_nav_unanswered"
+                        android:text="17"/>
+
+                    <TextView
+                        android:id="@+id/nav18"
+                        style="@style/MockNavButton"
+                        android:background="@drawable/bg_nav_unanswered"
+                        android:text="18"/>
+
+                    <TextView
+                        android:id="@+id/nav19"
+                        style="@style/MockNavButton"
+                        android:background="@drawable/bg_nav_unanswered"
+                        android:text="19"/>
+
+                    <TextView
+                        android:id="@+id/nav20"
+                        style="@style/MockNavButton"
+                        android:background="@drawable/bg_nav_unanswered"
+                        android:text="20"/>
+
+                </GridLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- SUBMIT TEST -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:gravity="center"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:background="#FFFFFF">
+
+        <TextView
+            android:id="@+id/btnSubmitTest"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="@drawable/bg_button_blue"
+            android:gravity="center"
+            android:text="Submit Test"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+</LinearLayout>
