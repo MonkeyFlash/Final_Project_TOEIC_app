@@ -75,7 +75,7 @@ public class Register extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                progressBar.setVisibility(View.VISIBLE);
+
                 String email, password;
 
                 email = edtRegisterName.getText().toString().trim();
@@ -86,10 +86,10 @@ public class Register extends AppCompatActivity {
                     return;
                 }
                 if(TextUtils.isEmpty(password)){
-                    Toast.makeText(Register.this, "Enter Email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Register.this, "Enter Password", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
+                progressBar.setVisibility(View.VISIBLE);
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
@@ -98,6 +98,12 @@ public class Register extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(Register.this, "Account Created",
                                             Toast.LENGTH_SHORT).show();
+                                    mAuth.signOut();
+                                    Intent intent = new Intent(Register.this, Login.class);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                                            | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    startActivity(intent);
+                                    finish();
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Toast.makeText(Register.this, "Authentication failed.",
