@@ -33,46 +33,57 @@ public class HomeFragment extends Fragment {
         Button btnStartMockTest = view.findViewById(R.id.btnStartMockTest);
 
         //Intent card
-        cardVocabulary.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        cardVocabulary.setOnClickListener(v -> {
+            animateClick(v, () -> {
                 Intent intent = new Intent(requireActivity(), VocabTopic.class);
                 startActivity(intent);
-            }
+            });
         });
-        cardGrammar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        cardGrammar.setOnClickListener(v -> {
+            animateClick(v, () -> {
                 Intent intent = new Intent(requireActivity(), GrammarTopic.class);
                 startActivity(intent);
-            }
+            });
         });
 
-        cardListening.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        cardListening.setOnClickListener(v -> {
+            animateClick(v, () -> {
                 Intent intent = new Intent(requireActivity(), ListeningList.class);
                 startActivity(intent);
-            }
+            });
         });
 
-        cardReading.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        cardReading.setOnClickListener(v -> {
+            animateClick(v, () -> {
                 Intent intent = new Intent(requireActivity(), ReadingList.class);
                 startActivity(intent);
-            }
+            });
         });
 
-        btnStartMockTest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        btnStartMockTest.setOnClickListener(v -> {
+            animateClick(v, () -> {
                 Intent intent = new Intent(requireActivity(), TestList.class);
                 startActivity(intent);
-            }
+            });
         });
 
 
         return view;
+    }
+    //Animation
+    private void animateClick(View view, Runnable action) {
+        view.animate()
+                .scaleX(0.96f)
+                .scaleY(0.96f)
+                .setDuration(100)
+                .withEndAction(() -> {
+                    view.animate()
+                            .scaleX(1f)
+                            .scaleY(1f)
+                            .setDuration(100)
+                            .withEndAction(action)
+                            .start();
+                })
+                .start();
     }
 }
