@@ -45,8 +45,8 @@
                     android:background="@drawable/bg_search"
                     android:hint="Search vocabulary topics..."
                     android:padding="12dp"
-                    android:textColor="#101B42"
-                    android:textColorHint="#8798B5"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
                     android:textSize="14sp"
                     android:singleLine="true" />
 
@@ -404,29 +404,6 @@
         </LinearLayout>
 
         <!-- LEARN -->
-        <LinearLayout
-            android:id="@+id/navLearn"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="♧"
-                android:textColor="#FFFFFF"
-                android:textSize="23sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Learn"
-                android:textColor="#FFFFFF"
-                android:textSize="11sp" />
-
-        </LinearLayout>
 
         <!-- STATS -->
         <LinearLayout

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "654476518176",
+    "project_id": "login-register-toeic",
+    "storage_bucket": "login-register-toeic.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654476518176:android:8c5d4a56d0777d7c3ded45",
+        "android_client_info": {
+          "package_name": "com.example.finalproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbwptx4ejaHDVXw6ngzPMF3CFrgnMT2SA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
