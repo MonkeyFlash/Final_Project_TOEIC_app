@@ -4,7 +4,7 @@ public class Question {
 
     private String question;
     private String type;
-    private String part;
+    private int part;
 
     private String optionA;
     private String optionB;
@@ -22,7 +22,7 @@ public class Question {
     }
 
     // Constructor đầy đủ
-    public Question(String question, String type, String part,
+    public Question(String question, String type, int part,
                     String optionA, String optionB,
                     String optionC, String optionD,
                     String correctAnswer, String explanation,
@@ -44,7 +44,7 @@ public class Question {
     // Getter
     public String getQuestion() { return question; }
     public String getType() { return type; }
-    public String getPart() { return part; }
+    public int getPart() { return part; }
 
     public String getOptionA() { return optionA; }
     public String getOptionB() { return optionB; }
