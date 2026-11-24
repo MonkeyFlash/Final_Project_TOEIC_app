@@ -16,7 +16,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize"></activity>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".Login"
             android:exported="true"
@@ -85,6 +85,19 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".Stats"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Part"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Part5"
+            android:exported="false"
+            android:theme="@style/Theme.FinalProject"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Part5_Question"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>
