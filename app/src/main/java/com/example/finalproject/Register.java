@@ -1,11 +1,8 @@
 package com.example.finalproject;
 
-import static android.content.ContentValues.TAG;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,7 +21,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Register extends AppCompatActivity {
     EditText edtRegisterName, edtRegisterPassword;
@@ -94,20 +97,40 @@ public class Register extends AppCompatActivity {
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                progressBar.setVisibility(View.GONE);
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(Register.this, "Account Created",
-                                            Toast.LENGTH_SHORT).show();
-                                    mAuth.signOut();
-                                    Intent intent = new Intent(Register.this, Login.class);
-                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
-                                            | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                    startActivity(intent);
-                                    finish();
+                                if (task.isSuccessful() && task.getResult() != null && task.getResult().getUser() != null) {
+                                    String uid = task.getResult().getUser().getUid();
+                                    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+                                    Map<String, Object> data = new HashMap<>();
+                                    data.put("email", email);
+                                    data.put("avatar_url", "");
+                                    data.put("role", "user");
+                                    data.put("status", "active");
+                                    data.put("created_at", FieldValue.serverTimestamp());
+
+                                    db.collection("users").document(uid).set(data)
+                                            .addOnSuccessListener(aVoid -> {
+                                                progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(Register.this, "Account Created Successfully!", Toast.LENGTH_SHORT).show();
+                                                mAuth.signOut();
+                                                Intent intent = new Intent(Register.this, Login.class);
+                                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                startActivity(intent);
+                                                finish();
+                                            })
+                                            .addOnFailureListener(e -> {
+                                                progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(Register.this, "Firestore Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                                            });
                                 } else {
-                                    // If sign in fails, display a message to the user.
-                                    Toast.makeText(Register.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
+                                    progressBar.setVisibility(View.GONE);
+                                    if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                                        Toast.makeText(Register.this, "Email is already registered! Please use another email.", Toast.LENGTH_LONG).show();
+                                    } else if (task.getException() != null) {
+                                        Toast.makeText(Register.this, "Registration error: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                    } else {
+                                        Toast.makeText(Register.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                                    }
                                 }
                             }
                         });

@@ -16,6 +16,11 @@ import androidx.fragment.app.Fragment;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,6 +45,39 @@ public class MainActivity extends AppCompatActivity {
         initView();
         if (!authCheck()) return;
         tabChange(savedInstanceState);
+        saveUserToFirestore();
+    }
+
+    private void saveUserToFirestore() {
+        String uid = user.getUid();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("users")
+                .document(uid)
+                .get()
+                .addOnSuccessListener(document -> {
+                    if (!document.exists()) {
+                        Map<String, Object> data = new HashMap<>();
+                        data.put("avatar_url", "");
+                        data.put("role", "user");
+                        data.put("status", "active");
+                        data.put("created_at", FieldValue.serverTimestamp());
+
+                        db.collection("users")
+                                .document(uid)
+                                .set(data)
+                                .addOnSuccessListener(aVoid -> {
+                                    //luu user
+                                })
+                                .addOnFailureListener(e -> {
+                                    //luu that bai
+                                });
+
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    //khong doc duoc
+                });
+
     }
 
     private void tabChange(Bundle savedInstanceState) {
