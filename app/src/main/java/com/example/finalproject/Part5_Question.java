@@ -1,6 +1,7 @@
-
 package com.example.finalproject;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -33,10 +34,11 @@ public class Part5_Question extends AppCompatActivity {
 
     ArrayList<Question> listQuestions = new ArrayList<>();
     ArrayList<String> userAnswers = new ArrayList<>();
-    int score = 0;
 
     int currentIndex = 0;
     boolean answerSelected = false;
+    boolean isReviewMode = false;
+
     LinearLayout explanationBox;
     TextView tvResult, tvExplanation;
 
@@ -63,16 +65,15 @@ public class Part5_Question extends AppCompatActivity {
         questionFromDatabase();
         answer();
     }
-    private int calculateScore() {
 
+    private int calculateScore() {
         int totalScore = 0;
 
         for (int i = 0; i < listQuestions.size(); i++) {
-
             String userAnswer = userAnswers.get(i);
             String correctAnswer = listQuestions.get(i).getCorrectAnswer();
 
-            if (userAnswer.equals(correctAnswer)) {
+            if (userAnswer != null && userAnswer.equals(correctAnswer)) {
                 totalScore++;
             }
         }
@@ -80,9 +81,9 @@ public class Part5_Question extends AppCompatActivity {
         return totalScore;
     }
 
-
-
     private void checkAnswer(String selectedAnswer) {
+        if (listQuestions.isEmpty() || currentIndex >= listQuestions.size()) return;
+
         Question q = listQuestions.get(currentIndex);
 
         String correctAnswer = q.getCorrectAnswer();
@@ -92,84 +93,54 @@ public class Part5_Question extends AppCompatActivity {
 
         if (selectedAnswer.equals(correctAnswer)) {
             tvResult.setText("✓ Chính xác!");
+            tvResult.setTextColor(Color.parseColor("#2E7D32"));
         } else {
             tvResult.setText("✗ Chưa chính xác!");
+            tvResult.setTextColor(Color.parseColor("#C62828"));
         }
 
-        tvExplanation.setText(
-                "Đáp án đúng: " + correctAnswer + "\n\n" + explanation
-        );
+        tvExplanation.setText("Đáp án đúng: " + correctAnswer + "\n\n" + (explanation != null ? explanation : ""));
     }
 
     private void answer() {
-        optionA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (answerSelected) return;
-                answerSelected = true;
-
-                rbA.setChecked(true);
-                rbB.setChecked(false);
-                rbC.setChecked(false);
-                rbD.setChecked(false);
-                userAnswers.set(currentIndex, "A");
-                checkAnswer("A");
-            }
+        optionA.setOnClickListener(v -> {
+            if (isReviewMode || answerSelected) return;
+            selectAnswer("A");
         });
-        optionB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (answerSelected) return;
-                answerSelected = true;
 
-                rbA.setChecked(false);
-                rbB.setChecked(true);
-                rbC.setChecked(false);
-                rbD.setChecked(false);
-                userAnswers.set(currentIndex, "B");
-                checkAnswer("B");
-            }
+        optionB.setOnClickListener(v -> {
+            if (isReviewMode || answerSelected) return;
+            selectAnswer("B");
         });
-        optionC.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (answerSelected) return;
-                answerSelected = true;
 
-                rbA.setChecked(false);
-                rbB.setChecked(false);
-                rbC.setChecked(true);
-                rbD.setChecked(false);
-                userAnswers.set(currentIndex, "C");
-                checkAnswer("C");
-            }
+        optionC.setOnClickListener(v -> {
+            if (isReviewMode || answerSelected) return;
+            selectAnswer("C");
         });
-        optionD.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (answerSelected) return;
-                answerSelected = true;
 
-                rbA.setChecked(false);
-                rbB.setChecked(false);
-                rbC.setChecked(false);
-                rbD.setChecked(true);
-                userAnswers.set(currentIndex, "D");
-                checkAnswer("D");
-            }
+        optionD.setOnClickListener(v -> {
+            if (isReviewMode || answerSelected) return;
+            selectAnswer("D");
         });
     }
 
+    private void selectAnswer(String option) {
+        answerSelected = true;
 
+        rbA.setChecked(option.equals("A"));
+        rbB.setChecked(option.equals("B"));
+        rbC.setChecked(option.equals("C"));
+        rbD.setChecked(option.equals("D"));
+
+        userAnswers.set(currentIndex, option);
+        checkAnswer(option);
+    }
 
     // HIỂN THỊ CÂU HỎI
     private void displayQuestion() {
-
         if (listQuestions.isEmpty()) {
             return;
         }
-
-        answerSelected = false;
 
         Question q = listQuestions.get(currentIndex);
 
@@ -189,41 +160,47 @@ public class Part5_Question extends AppCompatActivity {
         rbC.setChecked(savedAnswer.equals("C"));
         rbD.setChecked(savedAnswer.equals("D"));
 
-        answerSelected = !savedAnswer.isEmpty();
-
-        // Ẩn phần giải thích của câu trước
-        if (savedAnswer.isEmpty()) {
-
-            explanationBox.setVisibility(View.GONE);
-            tvResult.setText("");
-            tvExplanation.setText("");
-
+        if (isReviewMode) {
+            answerSelected = true; // Khóa không cho sửa đáp án khi đang Review
+            if (savedAnswer.isEmpty()) {
+                explanationBox.setVisibility(View.VISIBLE);
+                tvResult.setText("− Bỏ qua câu này");
+                tvResult.setTextColor(Color.parseColor("#596783"));
+                tvExplanation.setText("Đáp án đúng: " + q.getCorrectAnswer() + "\n\n" + (q.getExplanation() != null ? q.getExplanation() : ""));
+            } else {
+                checkAnswer(savedAnswer);
+            }
         } else {
-
-            checkAnswer(savedAnswer);
+            answerSelected = !savedAnswer.isEmpty();
+            if (savedAnswer.isEmpty()) {
+                explanationBox.setVisibility(View.GONE);
+                tvResult.setText("");
+                tvExplanation.setText("");
+            } else {
+                checkAnswer(savedAnswer);
+            }
         }
 
         // Cập nhật số câu
-        tvQuestionNumber.setText(
-                "Question " + (currentIndex + 1)
-                        + "/" + listQuestions.size()
-        );
+        tvQuestionNumber.setText("Question " + (currentIndex + 1) + "/" + listQuestions.size());
+
+        if (currentIndex == listQuestions.size() - 1) {
+            btnNext.setText(isReviewMode ? "End" : "Finish");
+        } else {
+            btnNext.setText("Next");
+        }
     }
 
     // LẤY CÂU HỎI TỪ FIREBASE
     private void questionFromDatabase() {
-
         db.collection("questions")
                 .whereEqualTo("part", 5)
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
-
                     listQuestions.clear();
 
                     for (DocumentSnapshot document : queryDocumentSnapshots) {
-
                         Question question = document.toObject(Question.class);
-
                         if (question != null) {
                             listQuestions.add(question);
                         }
@@ -234,72 +211,77 @@ public class Part5_Question extends AppCompatActivity {
 
                     // Giới hạn tối đa 30 câu
                     if (listQuestions.size() > 30) {
-                        listQuestions = new ArrayList<>(
-                                listQuestions.subList(0, 30)
-                        );
+                        listQuestions = new ArrayList<>(listQuestions.subList(0, 30));
                     }
-                    //Co che tinh diem
-                    userAnswers.clear();
 
+                    userAnswers.clear();
                     for (int i = 0; i < listQuestions.size(); i++) {
                         userAnswers.add("");
                     }
 
                     if (!listQuestions.isEmpty()) {
-
                         currentIndex = 0;
-
-                        // Chỉ hiển thị sau khi Firebase tải xong
                         displayQuestion();
-
                     } else {
-
-                        Toast.makeText(this,
-                                "Không có câu hỏi Part 5",
-                                Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Không có câu hỏi Part 5", Toast.LENGTH_SHORT).show();
                     }
-
                 })
                 .addOnFailureListener(e -> {
-
-                    Toast.makeText(this,
-                            "Lỗi tải câu hỏi: " + e.getMessage(),
-                            Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Lỗi tải câu hỏi: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 });
     }
 
     // NEXT VÀ PREVIOUS
     private void setupNavigation() {
-
         btnNext.setOnClickListener(v -> {
-
             if (currentIndex < listQuestions.size() - 1) {
-
                 currentIndex++;
-
                 displayQuestion();
-
             } else if (!listQuestions.isEmpty()) {
-
-                Toast.makeText(this,
-                        "Bạn đã đến câu cuối cùng!",
-                        Toast.LENGTH_SHORT).show();
+                if (!isReviewMode) {
+                    finishQuiz();
+                } else {
+                    Toast.makeText(this, "Bạn đã ở câu cuối cùng!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         btnPrevious.setOnClickListener(v -> {
-
             if (currentIndex > 0) {
-
                 currentIndex--;
-
                 displayQuestion();
             }
         });
     }
 
-    private void initViews() {
+    private void finishQuiz() {
+        isReviewMode = true; // Kích hoạt chế độ chỉ Xem lại câu hỏi (khóa chỉnh sửa đáp án)
 
+        int total = listQuestions.size();
+        int correct = calculateScore();
+        int answered = 0;
+        for (int i = 0; i < userAnswers.size(); i++) {
+            if (!userAnswers.get(i).isEmpty()) {
+                answered++;
+            }
+        }
+        int wrong = answered - correct;
+        int unanswered = total - answered;
+
+        Intent intent = new Intent(Part5_Question.this, Part5_Result.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putInt("correctCount", correct);
+        bundle.putInt("wrongCount", wrong);
+        bundle.putInt("unansweredCount", unanswered);
+        bundle.putInt("totalCount", total);
+
+        intent.putExtras(bundle);
+
+        startActivity(intent);
+    }
+
+    private void initViews() {
         tvQuestion = findViewById(R.id.tvQuestion);
 
         tvAnswerA = findViewById(R.id.tvAnswerA);
@@ -325,7 +307,5 @@ public class Part5_Question extends AppCompatActivity {
 
         btnNext = findViewById(R.id.btnNext);
         btnPrevious = findViewById(R.id.btnPrevious);
-
-
     }
 }
