@@ -1,0 +1,31 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // USER: mỗi người chỉ truy cập tài khoản của chính mình
+    match /users/{userId} {
+      allow read, write: if request.auth != null
+                         && request.auth.uid == userId;
+    }
+
+    // QUESTIONS: người đã đăng nhập được đọc câu hỏi
+    match /questions/{questionId} {
+      allow read: if request.auth != null;
+    }
+
+    // Listening demo: authenticated clients may read; only administrators import data.
+    match /listening_part1/{questionId} {
+      allow read: if request.auth != null;
+    }
+    match /listening_part2/{questionId} {
+      allow read: if request.auth != null;
+    }
+    match /listening_part3/{questionId} {
+      allow read: if request.auth != null;
+    }
+    match /listening_part4/{questionId} {
+      allow read: if request.auth != null;
+    }
+  }
+}

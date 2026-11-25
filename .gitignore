@@ -13,3 +13,11 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Local IDE configuration
+/.idea/
+
+# Local verification receipts and Rules backup
+/data/listening_demo/media_check.json
+/data/listening_demo/firestore_setup.json
+/firebase/firestore.before-listening.rules

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/main" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="#F0F7FF">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="56dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/bg_blue_gradient" android:paddingHorizontal="12dp">
+        <TextView android:id="@+id/btnBack" android:layout_width="42dp" android:layout_height="match_parent" android:gravity="center" android:text="‹" android:textColor="#FFFFFF" android:textSize="36sp" />
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Listening Practice" android:textColor="#FFFFFF" android:textSize="17sp" android:textStyle="bold" android:id="@+id/tvIntroTitle" />
+    </LinearLayout>
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:scrollbars="none">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="18dp">
+            <TextView android:id="@+id/tvIntroStatus" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Đang tải dữ liệu…" android:textSize="14sp" android:textColor="#101B42" android:padding="8dp" />
+            <TextView android:id="@+id/btnRetryListening" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Thử lại" android:textSize="14sp" android:textColor="#101B42" android:padding="8dp" android:visibility="gone" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:orientation="vertical" android:background="@drawable/bg_white_card" android:elevation="2dp" android:padding="18dp">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Giới thiệu" android:textColor="#101B42" android:textSize="17sp" android:textStyle="bold" android:id="@+id/tvIntroPart" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:lineSpacingExtra="5dp" android:text="" android:textColor="#526580" android:textSize="14sp" android:id="@+id/tvIntroDescription" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:orientation="vertical" android:background="@drawable/bg_white_card" android:elevation="2dp" android:padding="18dp">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Nội dung luyện tập" android:textColor="#101B42" android:textSize="17sp" android:textStyle="bold" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="✓  Nghe và hiểu nội dung" android:textColor="#526580" android:textSize="14sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="✓  Chọn đáp án phù hợp" android:textColor="#526580" android:textSize="14sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="✓  Được sửa lựa chọn trước khi nộp" android:textColor="#526580" android:textSize="14sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="✓  Xem lại sau khi hoàn thành" android:textColor="#526580" android:textSize="14sp" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:orientation="vertical" android:background="@drawable/bg_white_card" android:elevation="2dp" android:padding="18dp">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Cách làm bài" android:textColor="#101B42" android:textSize="17sp" android:textStyle="bold" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:lineSpacingExtra="5dp" android:text="Nghe audio rồi chọn đáp án. Có thể nghe lại, đổi tốc độ và sửa lựa chọn. Nộp bài để xem số câu đúng, sai và bỏ qua." android:textColor="#526580" android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="80dp" android:gravity="center" android:paddingHorizontal="18dp" android:paddingVertical="10dp" android:background="#F0F7FF">
+        <TextView android:id="@+id/btnStartListening" android:layout_width="match_parent" android:layout_height="55dp" android:background="@drawable/bg_button_blue" android:gravity="center" android:text="Đang tải bài nghe…" android:textColor="#FFFFFF" android:textSize="16sp" android:textStyle="bold" android:enabled="false" />
+    </LinearLayout>
+</LinearLayout>

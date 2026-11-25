@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "projectId": "login-register-toeic",
+  "databaseId": "(default)",
+  "description": "Small draft reference sample: four documents, eight questions. Keep source A-D order. Answer keys cross-referenced against third-party sources; not independently verified against audio. No full transcript or downloaded media included.",
+  "documents": [
+    {
+      "collection": "listening_part1",
+      "documentId": "demo_zenlish_2026_test1_85514",
+      "data": {
+        "schemaVersion": 1,
+        "part": 1,
+        "title": "Demo Part 1 - Test 1 (2026)",
+        "order": 1,
+        "status": "draft",
+        "demoOnly": true,
+        "sourceUrl": "https://zenlishtoeic.vn/stm-quizzes/test-1-2026/",
+        "sourceTestId": "87132",
+        "sourceQuestionId": "85514",
+        "audioUrl": "https://zenlishtoeic.vn/wp-content/uploads/2025/12/zenlish-test-01-01.mp3",
+        "audioText": "",
+        "imageUrl": "https://zenlishtoeic.vn/wp-content/uploads/2025/12/zenlish-p1-1-1.jpg",
+        "questionCount": 1,
+        "rightsStatus": "not_verified_for_redistribution",
+        "mediaStatus": "urls_reachable",
+        "answerStatus": "cross_referenced",
+        "questionNumber": 1,
+        "question": "1.",
+        "correctAnswer": "B",
+        "explanation": "",
+        "answerSourceUrls": [
+          "https://www.studocu.vn/vn/document/truong-dai-hoc-van-lang/toan-cao-cap/ets-2026-listening-test-1-script-and-answer-key/152320500"
+        ],
+        "optionA": "",
+        "optionB": "",
+        "optionC": "",
+        "optionD": ""
+      }
+    },
+    {
+      "collection": "listening_part2",
+      "documentId": "demo_zenlish_2026_test1_85552",
+      "data": {
+        "schemaVersion": 1,
+        "part": 2,
+        "title": "Demo Part 2 - Test 1 (2026)",
+        "order": 1,
+        "status": "draft",
+        "demoOnly": true,
+        "sourceUrl": "https://zenlishtoeic.vn/stm-quizzes/test-1-2026/",
+        "sourceTestId": "87132",
+        "sourceQuestionId": "85552",
+        "audioUrl": "https://zenlishtoeic.vn/wp-content/uploads/2025/12/zenlish-test-01-07.mp3",
+        "audioText": "",
+        "imageUrl": "",
+        "questionCount": 1,
+        "rightsStatus": "not_verified_for_redistribution",
+        "mediaStatus": "urls_reachable",
+        "answerStatus": "cross_referenced",
+        "questionNumber": 7,
+        "question": "7.",
+        "correctAnswer": "B",
+        "explanation": "",
+        "answerSourceUrls": [
+          "https://www.studocu.vn/vn/document/truong-dai-hoc-van-lang/toan-cao-cap/ets-2026-listening-test-1-script-and-answer-key/152320500"
+        ],
+        "optionA": "",
+        "optionB": "",
+        "optionC": ""
+      }
+    },
+    {
+      "collection": "listening_part3",
+      "documentId": "demo_zenlish_2026_test1_85631",
+      "data": {
+        "schemaVersion": 1,
+        "part": 3,
+        "title": "Demo Part 3 - Test 1 (2026)",
+        "order": 1,
+        "status": "draft",
+        "demoOnly": true,
+        "sourceUrl": "https://zenlishtoeic.vn/stm-quizzes/test-1-2026/",
+        "sourceTestId": "87132",
+        "sourceQuestionId": "85631",
+        "audioUrl": "https://zenlishtoeic.vn/wp-content/uploads/2025/12/zenlish-test-01-32-34.mp3",
+        "audioText": "",
+        "imageUrl": "",
+        "questionCount": 3,
+        "rightsStatus": "not_verified_for_redistribution",
+        "mediaStatus": "urls_reachable",
+        "answerStatus": "cross_referenced",
+        "questions": [
+          {
+            "id": "zenlish_2026_test1_q32",
+            "questionNumber": 32,
+            "question": "32. What type of food product does the speakers’ company sell?",
+            "correctAnswer": "B",
+            "explanation": "",
+            "answerStatus": "cross_referenced",
+            "answerSourceUrls": [
+              "https://www.studocu.vn/vn/document/truong-dai-hoc-van-lang/toan-cao-cap/ets-2026-listening-test-1-script-and-answer-key/152320500",
+              "https://quizlet.com/vn/1225429887/nghe-toeic-k12-flash-cards/"
+            ],
+            "optionA": "Candy",
+            "optionB": "Cheese",
+            "optionC": "Bread",
+            "optionD": "Pasta"
+          },
+          {
+            "id": "zenlish_2026_test1_q33",
+            "questionNumber": 33,
+            "question": "33. What does the man suggest?",
+            "correctAnswer": "D",
+            "explanation": "",
+            "answerStatus": "cross_referenced",
+            "answerSourceUrls": [
+              "https://www.studocu.vn/vn/document/truong-dai-hoc-van-lang/toan-cao-cap/ets-2026-listening-test-1-script-and-answer-key/152320500",
+              "https://quizlet.com/vn/1225429887/nghe-toeic-k12-flash-cards/"
+            ],
+            "optionA": "Lowering prices",
+            "optionB": "Hiring more workers",
+            "optionC": "Publishing a recipe",
+            "optionD": "Offering additional options"
+          },
+          {
+            "id": "zenlish_2026_test1_q34",
+            "questionNumber": 34,
+            "question": "34. What does the woman say she will do?",
+            "correctAnswer": "B",
+            "explanation": "",
+            "answerStatus": "cross_referenced",
+            "answerSourceUrls": [
+              "https://www.studocu.vn/vn/document/truong-dai-hoc-van-lang/toan-cao-cap/ets-2026-listening-test-1-script-and-answer-key/152320500",
+              "https://quizlet.com/vn/1225429887/nghe-toeic-k12-flash-cards/"
+            ],
+            "optionA": "Send a schedule update",
+            "optionB": "Contact a production manager",
+            "optionC": "Visit the company headquarters",
+            "optionD": "Plan an advertising campaign"
+          }
+        ]
+      }
+    },
+    {
+      "collection": "listening_part4",
+      "documentId": "demo_zenlish_2026_test1_86218",
+      "data": {
+        "schemaVersion": 1,
+        "part": 4,
+        "title": "Demo Part 4 - Test 1 (2026)",
+        "order": 1,
+        "status": "draft",
+        "demoOnly": true,
+        "sourceUrl": "https://zenlishtoeic.vn/stm-quizzes/test-1-2026/",
+        "sourceTestId": "87132",
+        "sourceQuestionId": "86218",
+        "audioUrl": "https://zenlishtoeic.vn/wp-content/uploads/2025/12/zenlish-test-01-71-73.mp3",
+        "audioText": "",
+        "imageUrl": "",
+        "questionCount": 3,
+        "rightsStatus": "not_verified_for_redistribution",
+        "mediaStatus": "urls_reachable",
+        "answerStatus": "cross_referenced",
+        "questions": [
+          {
+            "id": "zenlish_2026_test1_q71",
+            "questionNumber": 71,
+            "question": "71. What type of products does the business repair?",
+            "correctAnswer": "B",
+            "explanation": "",
+            "answerStatus": "cross_referenced",
+            "answerSourceUrls": [
+              "https://www.scribd.com/document/1068422208/ETS-2026-Gi%E1%BA%A3i-Chi-Ti%E1%BA%BFt-Full-LC-Test-1"
+            ],
+            "optionA": "Computers",
+            "optionB": "Vehicles",
+            "optionC": "Light fixtures",
+            "optionD": "Kitchen appliances"
+          },
+          {
+            "id": "zenlish_2026_test1_q72",
+            "questionNumber": 72,
+            "question": "72. What special benefit does the speaker mention?",
+            "correctAnswer": "C",
+            "explanation": "",
+            "answerStatus": "cross_referenced",
+            "answerSourceUrls": [
+              "https://www.scribd.com/document/1068422208/ETS-2026-Gi%E1%BA%A3i-Chi-Ti%E1%BA%BFt-Full-LC-Test-1"
+            ],
+            "optionA": "Free pickup",
+            "optionB": "Online scheduling",
+            "optionC": "Extended warranties",
+            "optionD": "A membership loyalty program"
+          },
+          {
+            "id": "zenlish_2026_test1_q73",
+            "questionNumber": 73,
+            "question": "73. Why will a business close on Friday?",
+            "correctAnswer": "A",
+            "explanation": "",
+            "answerStatus": "cross_referenced",
+            "answerSourceUrls": [
+              "https://www.scribd.com/document/1068422208/ETS-2026-Gi%E1%BA%A3i-Chi-Ti%E1%BA%BFt-Full-LC-Test-1"
+            ],
+            "optionA": "For an inventory count",
+            "optionB": "For employee training",
+            "optionC": "For a company celebration",
+            "optionD": "For equipment installation"
+          }
+        ]
+      }
+    }
+  ]
+}
