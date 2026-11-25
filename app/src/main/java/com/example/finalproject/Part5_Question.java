@@ -106,43 +106,61 @@ public class Part5_Question extends AppCompatActivity {
     private void answer() {
         optionA.setOnClickListener(v -> {
             if (isReviewMode || answerSelected) return;
-            selectAnswer("A");
+
+            answerSelected = true;
+            rbA.setChecked(true);
+            rbB.setChecked(false);
+            rbC.setChecked(false);
+            rbD.setChecked(false);
+
+            userAnswers.set(currentIndex, "A");
+            checkAnswer("A");
         });
 
         optionB.setOnClickListener(v -> {
             if (isReviewMode || answerSelected) return;
-            selectAnswer("B");
+
+            answerSelected = true;
+            rbA.setChecked(false);
+            rbB.setChecked(true);
+            rbC.setChecked(false);
+            rbD.setChecked(false);
+
+            userAnswers.set(currentIndex, "B");
+            checkAnswer("B");
         });
 
         optionC.setOnClickListener(v -> {
             if (isReviewMode || answerSelected) return;
-            selectAnswer("C");
+
+            answerSelected = true;
+            rbA.setChecked(false);
+            rbB.setChecked(false);
+            rbC.setChecked(true);
+            rbD.setChecked(false);
+
+            userAnswers.set(currentIndex, "C");
+            checkAnswer("C");
         });
 
         optionD.setOnClickListener(v -> {
             if (isReviewMode || answerSelected) return;
-            selectAnswer("D");
+
+            answerSelected = true;
+            rbA.setChecked(false);
+            rbB.setChecked(false);
+            rbC.setChecked(false);
+            rbD.setChecked(true);
+
+            userAnswers.set(currentIndex, "D");
+            checkAnswer("D");
         });
 
-        // Vô hiệu hóa click riêng của RadioButton để tránh xung đột
         rbA.setClickable(false);
         rbB.setClickable(false);
         rbC.setClickable(false);
         rbD.setClickable(false);
     }
-
-    private void selectAnswer(String option) {
-        answerSelected = true;
-
-        rbA.setChecked(option.equals("A"));
-        rbB.setChecked(option.equals("B"));
-        rbC.setChecked(option.equals("C"));
-        rbD.setChecked(option.equals("D"));
-
-        userAnswers.set(currentIndex, option);
-        checkAnswer(option);
-    }
-
     // HIỂN THỊ CÂU HỎI
     private void displayQuestion() {
         if (listQuestions == null || listQuestions.isEmpty() || currentIndex < 0 || currentIndex >= listQuestions.size()) {
