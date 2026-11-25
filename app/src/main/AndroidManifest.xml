@@ -104,6 +104,8 @@
             android:name=".Part5_Result"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ListeningIntro" android:exported="false" />
+        <activity android:name=".ListeningResult" android:exported="false" />
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.example.finalproject;
 
 import android.os.Bundle;
+import android.content.Intent;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,5 +22,11 @@ public class ListeningList extends AppCompatActivity {
             return insets;
         });
         findViewById(R.id.btnBack).setOnClickListener(v -> finish());
+        int[] ids = {R.id.itemPart1, R.id.itemPart2, R.id.itemPart3, R.id.itemPart4};
+        for (int i = 0; i < ids.length; i++) {
+            final int part = i + 1;
+            findViewById(ids[i]).setOnClickListener(v -> startActivity(
+                    new Intent(this, ListeningIntro.class).putExtra("part", part)));
+        }
     }
 }

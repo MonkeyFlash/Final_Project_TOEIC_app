@@ -74,7 +74,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Question 3/6"
+                    android:text=""
                     android:textColor="#101B42"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -85,7 +85,8 @@
                     android:layout_height="30dp"
                     android:padding="4dp"
                     android:src="@android:drawable/btn_star_big_off"
-                    android:contentDescription="Bookmark" />
+                    android:contentDescription="Bookmark"
+                android:visibility="gone" />
 
             </LinearLayout>
 
@@ -96,7 +97,7 @@
                 android:layout_height="190dp"
                 android:layout_marginTop="8dp"
                 android:background="#DCEAF5"
-                android:scaleType="centerCrop"
+                android:scaleType="fitCenter"
                 android:src="@android:drawable/ic_menu_gallery"
                 android:contentDescription="Listening question photograph" />
 
@@ -140,7 +141,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="35dp"
                             android:max="100"
-                            android:progress="35"
+                            android:progress="0"
                             android:progressTint="#2585F7"
                             android:thumbTint="#2585F7"
                             android:progressBackgroundTint="#DCE5F2" />
@@ -152,7 +153,7 @@
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="0:12 / 0:35"
+                        android:text="0:00 / 0:00"
                         android:textColor="#71809B"
                         android:textSize="12sp" />
 
@@ -195,6 +196,29 @@
 
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/tvAudioStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Đang tải audio…"
+                android:textColor="#101B42" />
+            <TextView
+                android:id="@+id/btnRetryAudio"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center_vertical"
+                android:text="Thử tải lại audio"
+                android:textColor="#1764CC"
+                android:visibility="gone" />
+            <TextView
+                android:id="@+id/tvListeningQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textColor="#101B42"
+                android:textSize="17sp" />
+
             <!-- ANSWER OPTIONS -->
             <LinearLayout
                 android:id="@+id/layoutAnswers"
@@ -207,18 +231,21 @@
                 <LinearLayout
                     android:id="@+id/optionA"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="7dp"
                     android:background="@drawable/bg_answer_option"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingHorizontal="10dp">
+                    android:paddingHorizontal="10dp"
+                android:minHeight="52dp">
 
                     <RadioButton
                         android:id="@+id/rbA"
                         android:layout_width="28dp"
                         android:layout_height="28dp"
-                        android:buttonTint="#AEBFD4" />
+                        android:buttonTint="#AEBFD4"
+                android:clickable="false"
+                android:focusable="false" />
 
                     <TextView
                         android:layout_width="25dp"
@@ -233,7 +260,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="The man is using a computer."
+                        android:text=""
                         android:textColor="#101B42"
                         android:textSize="13sp" />
 
@@ -243,19 +270,21 @@
                 <LinearLayout
                     android:id="@+id/optionB"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="7dp"
-                    android:background="@drawable/bg_answer_selected"
+                    android:background="@drawable/bg_answer_option"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingHorizontal="10dp">
+                    android:paddingHorizontal="10dp"
+                android:minHeight="52dp">
 
                     <RadioButton
                         android:id="@+id/rbB"
                         android:layout_width="28dp"
                         android:layout_height="28dp"
-                        android:checked="true"
-                        android:buttonTint="#2585F7" />
+                        android:buttonTint="#2585F7"
+                android:clickable="false"
+                android:focusable="false" />
 
                     <TextView
                         android:layout_width="25dp"
@@ -270,7 +299,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="The man is talking to his colleagues."
+                        android:text=""
                         android:textColor="#101B42"
                         android:textSize="13sp" />
 
@@ -280,18 +309,21 @@
                 <LinearLayout
                     android:id="@+id/optionC"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="7dp"
                     android:background="@drawable/bg_answer_option"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingHorizontal="10dp">
+                    android:paddingHorizontal="10dp"
+                android:minHeight="52dp">
 
                     <RadioButton
                         android:id="@+id/rbC"
                         android:layout_width="28dp"
                         android:layout_height="28dp"
-                        android:buttonTint="#AEBFD4" />
+                        android:buttonTint="#AEBFD4"
+                android:clickable="false"
+                android:focusable="false" />
 
                     <TextView
                         android:layout_width="25dp"
@@ -306,7 +338,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="The people are having lunch."
+                        android:text=""
                         android:textColor="#101B42"
                         android:textSize="13sp" />
 
@@ -316,18 +348,21 @@
                 <LinearLayout
                     android:id="@+id/optionD"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="7dp"
                     android:background="@drawable/bg_answer_option"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingHorizontal="10dp">
+                    android:paddingHorizontal="10dp"
+                android:minHeight="52dp">
 
                     <RadioButton
                         android:id="@+id/rbD"
                         android:layout_width="28dp"
                         android:layout_height="28dp"
-                        android:buttonTint="#AEBFD4" />
+                        android:buttonTint="#AEBFD4"
+                android:clickable="false"
+                android:focusable="false" />
 
                     <TextView
                         android:layout_width="25dp"
@@ -342,12 +377,29 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="The woman is writing on a board."
+                        android:text=""
                         android:textColor="#101B42"
                         android:textSize="13sp" />
 
                 </LinearLayout>
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/listeningExplanation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_explanation"
+                android:padding="12dp"
+                android:layout_marginTop="12dp"
+                android:visibility="gone">
+                <TextView
+                    android:id="@+id/tvListeningExplanation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#101B42"
+                    android:textSize="14sp" />
             </LinearLayout>
 
         </LinearLayout>
@@ -357,11 +409,34 @@
     <!-- SUBMIT BUTTON -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="76dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:gravity="center"
         android:paddingHorizontal="16dp"
         android:paddingVertical="8dp"
         android:background="#F0F7FF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/btnListeningPrevious"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Câu trước"
+                android:textColor="#101B42" />
+            <TextView
+                android:id="@+id/btnListeningNext"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Câu tiếp"
+                android:textColor="#101B42" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/btnSubmit"
@@ -369,7 +444,7 @@
             android:layout_height="54dp"
             android:background="@drawable/bg_button_blue"
             android:gravity="center"
-            android:text="Submit"
+            android:text="Nộp bài"
             android:textColor="#FFFFFF"
             android:textSize="17sp"
             android:textStyle="bold" />

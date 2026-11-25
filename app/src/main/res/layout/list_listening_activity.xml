@@ -79,7 +79,8 @@
                 android:orientation="horizontal"
                 android:gravity="center"
                 android:padding="8dp"
-                android:elevation="3dp">
+                android:elevation="3dp"
+                android:visibility="gone">
 
                 <!-- QUESTIONS -->
                 <LinearLayout
@@ -247,7 +248,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:text="Look at a photo, choose the best description · 6 questions"
+                        android:text="Look at a photo, choose the best description"
                         android:textColor="#596783"
                         android:textSize="12sp" />
 
@@ -258,16 +259,17 @@
                         android:layout_height="8dp"
                         android:layout_marginTop="12dp"
                         android:max="100"
-                        android:progress="66"
+                        android:progress="0"
                         android:progressTint="#2585F7"
-                        android:progressBackgroundTint="#E4ECF7" />
+                        android:progressBackgroundTint="#E4ECF7"
+                android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvPart1Progress"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="4/6 done · 66%"
+                        android:text="Luyện tập demo"
                         android:textColor="#596783"
                         android:textSize="13sp" />
 
@@ -348,7 +350,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:text="Choose the best reply to a question · 25 questions"
+                        android:text="Choose the best reply to a question"
                         android:textColor="#596783"
                         android:textSize="12sp" />
 
@@ -359,16 +361,17 @@
                         android:layout_height="8dp"
                         android:layout_marginTop="12dp"
                         android:max="100"
-                        android:progress="48"
+                        android:progress="0"
                         android:progressTint="#2585F7"
-                        android:progressBackgroundTint="#E4ECF7" />
+                        android:progressBackgroundTint="#E4ECF7"
+                android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvPart2Progress"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="12/25 done · 48%"
+                        android:text="Luyện tập demo"
                         android:textColor="#596783"
                         android:textSize="13sp" />
 
@@ -449,7 +452,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:text="Short conversations between 2–3 people · 39 questions"
+                        android:text="Short conversations between 2–3 people"
                         android:textColor="#596783"
                         android:textSize="12sp" />
 
@@ -460,16 +463,17 @@
                         android:layout_height="8dp"
                         android:layout_marginTop="12dp"
                         android:max="100"
-                        android:progress="23"
+                        android:progress="0"
                         android:progressTint="#2585F7"
-                        android:progressBackgroundTint="#E4ECF7" />
+                        android:progressBackgroundTint="#E4ECF7"
+                android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvPart3Progress"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="9/39 done · 23%"
+                        android:text="Luyện tập demo"
                         android:textColor="#596783"
                         android:textSize="13sp" />
 
@@ -550,7 +554,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:text="Short talks by a single speaker · 30 questions"
+                        android:text="Short talks by a single speaker"
                         android:textColor="#596783"
                         android:textSize="12sp" />
 
@@ -563,14 +567,15 @@
                         android:max="100"
                         android:progress="0"
                         android:progressTint="#2585F7"
-                        android:progressBackgroundTint="#E4ECF7" />
+                        android:progressBackgroundTint="#E4ECF7"
+                android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvPart4Progress"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="0/30 done · 0%"
+                        android:text="Luyện tập demo"
                         android:textColor="#596783"
                         android:textSize="13sp" />
 
