@@ -227,6 +227,9 @@ public class Part6_Question extends AppCompatActivity {
                                     getNumberFromId(d1.getId()),
                                     getNumberFromId(d2.getId())
                             ));
+                    if (passageDocuments.size() > 30) {
+                        passageDocuments = new ArrayList<>(passageDocuments.subList(0, 30));
+                    }
 
                     if (passageDocuments.isEmpty()) {
                         Toast.makeText(this,
