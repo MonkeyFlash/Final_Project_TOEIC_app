@@ -95,7 +95,7 @@
                 android:background="@drawable/bg_input"
                 android:drawableStart="@android:drawable/ic_lock_lock"
                 android:drawablePadding="12dp"
-                android:hint="Password"
+                android:hint="Password (must have 6 characters)"
                 android:inputType="textPassword"
                 android:paddingHorizontal="15dp"
                 android:textColor="@color/text_dark"
