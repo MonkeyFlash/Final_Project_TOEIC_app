@@ -93,7 +93,7 @@
                         android:id="@+id/tvTotalQuestions"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="32/100"
+                        android:text="32/90"
                         android:textColor="#2585F7"
                         android:textSize="25sp"
                         android:textStyle="bold" />
@@ -142,32 +142,6 @@
                     android:layout_width="1dp"
                     android:layout_height="60dp"
                     android:background="#DCE5F2" />
-
-                <!-- PRACTICED -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tvPracticeTime"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="2h"
-                        android:textColor="#2585F7"
-                        android:textSize="25sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Practiced"
-                        android:textColor="#596783"
-                        android:textSize="14sp" />
-
-                </LinearLayout>
 
             </LinearLayout>
 
@@ -249,27 +223,7 @@
                         android:layout_marginTop="3dp"
                         android:text="Fill in the missing word · 30 questions"
                         android:textColor="#596783"
-                        android:textSize="12sp" />
-
-                    <ProgressBar
-                        android:id="@+id/progressPart5"
-                        style="?android:attr/progressBarStyleHorizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="8dp"
-                        android:layout_marginTop="12dp"
-                        android:max="100"
-                        android:progress="60"
-                        android:progressTint="#2585F7"
-                        android:progressBackgroundTint="#E4ECF7" />
-
-                    <TextView
-                        android:id="@+id/tvPart5Progress"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="18/30 done · 60%"
-                        android:textColor="#596783"
-                        android:textSize="13sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
@@ -324,7 +278,7 @@
                     android:layout_width="35dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:text="▤"
+                    android:text="📝"
                     android:textColor="#101B42"
                     android:textSize="27sp"
                     android:gravity="center" />
@@ -348,29 +302,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:text="Complete short texts and emails · 16 questions"
+                        android:text="Complete short texts and emails · 30 questions"
                         android:textColor="#596783"
-                        android:textSize="12sp" />
-
-                    <ProgressBar
-                        android:id="@+id/progressPart6"
-                        style="?android:attr/progressBarStyleHorizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="8dp"
-                        android:layout_marginTop="12dp"
-                        android:max="100"
-                        android:progress="25"
-                        android:progressTint="#2585F7"
-                        android:progressBackgroundTint="#E4ECF7" />
-
-                    <TextView
-                        android:id="@+id/tvPart6Progress"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="4/16 done · 25%"
-                        android:textColor="#596783"
-                        android:textSize="13sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
@@ -425,7 +359,7 @@
                     android:layout_width="35dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:text="♧"
+                    android:text="📖"
                     android:textColor="#101B42"
                     android:textSize="27sp"
                     android:gravity="center" />
@@ -449,29 +383,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
-                        android:text="Single, double and triple passages · 54 questions"
+                        android:text="Single, double and triple passages · 30 questions"
                         android:textColor="#596783"
-                        android:textSize="12sp" />
-
-                    <ProgressBar
-                        android:id="@+id/progressPart7"
-                        style="?android:attr/progressBarStyleHorizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="8dp"
-                        android:layout_marginTop="12dp"
-                        android:max="100"
-                        android:progress="18"
-                        android:progressTint="#2585F7"
-                        android:progressBackgroundTint="#E4ECF7" />
-
-                    <TextView
-                        android:id="@+id/tvPart7Progress"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="10/54 done · 18%"
-                        android:textColor="#596783"
-                        android:textSize="13sp" />
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 
