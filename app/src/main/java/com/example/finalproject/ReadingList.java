@@ -40,6 +40,13 @@ public class ReadingList extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        itemPart6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ReadingList.this, Part6.class );
+                startActivity(intent);
+            }
+        });
     }
 
     private void initViews() {
