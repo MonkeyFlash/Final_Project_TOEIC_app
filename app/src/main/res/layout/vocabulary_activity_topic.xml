@@ -83,6 +83,7 @@
 
                 <!-- OFFICE & BUSINESS -->
                 <LinearLayout
+                    android:id="@+id/cardTopic1"
                     android:layout_width="match_parent"
                     android:layout_height="85dp"
                     android:layout_marginBottom="10dp"
@@ -115,19 +116,21 @@
                             android:textStyle="bold" />
 
                         <ProgressBar
+                            android:id="@+id/progressTopic1"
                             style="?android:attr/progressBarStyleHorizontal"
                             android:layout_width="match_parent"
                             android:layout_height="8dp"
                             android:layout_marginTop="8dp"
-                            android:max="60"
-                            android:progress="45"
+                            android:max="100"
+                            android:progress="0"
                             android:progressTint="#2585F7"
                             android:progressBackgroundTint="#E4ECF7" />
 
                         <TextView
+                            android:id="@+id/tvCountTopic1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="45/60 words"
+                            android:text="0 words"
                             android:textColor="#596783"
                             android:textSize="12sp" />
 
@@ -144,6 +147,7 @@
 
                 <!-- TRAVEL & AIRPORT -->
                 <LinearLayout
+                    android:id="@+id/cardTopic2"
                     android:layout_width="match_parent"
                     android:layout_height="85dp"
                     android:layout_marginBottom="10dp"
@@ -176,19 +180,21 @@
                             android:textStyle="bold" />
 
                         <ProgressBar
+                            android:id="@+id/progressTopic2"
                             style="?android:attr/progressBarStyleHorizontal"
                             android:layout_width="match_parent"
                             android:layout_height="8dp"
                             android:layout_marginTop="8dp"
-                            android:max="50"
-                            android:progress="30"
+                            android:max="100"
+                            android:progress="0"
                             android:progressTint="#2585F7"
                             android:progressBackgroundTint="#E4ECF7" />
 
                         <TextView
+                            android:id="@+id/tvCountTopic2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="30/50 words"
+                            android:text="0 words"
                             android:textColor="#596783"
                             android:textSize="12sp" />
 
@@ -205,6 +211,7 @@
 
                 <!-- FINANCE & BANKING -->
                 <LinearLayout
+                    android:id="@+id/cardTopic3"
                     android:layout_width="match_parent"
                     android:layout_height="85dp"
                     android:layout_marginBottom="10dp"
@@ -237,19 +244,21 @@
                             android:textStyle="bold" />
 
                         <ProgressBar
+                            android:id="@+id/progressTopic3"
                             style="?android:attr/progressBarStyleHorizontal"
                             android:layout_width="match_parent"
                             android:layout_height="8dp"
                             android:layout_marginTop="8dp"
-                            android:max="40"
-                            android:progress="12"
+                            android:max="100"
+                            android:progress="0"
                             android:progressTint="#2585F7"
                             android:progressBackgroundTint="#E4ECF7" />
 
                         <TextView
+                            android:id="@+id/tvCountTopic3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="12/40 words"
+                            android:text="0 words"
                             android:textColor="#596783"
                             android:textSize="12sp" />
 
@@ -266,6 +275,7 @@
 
                 <!-- MARKETING -->
                 <LinearLayout
+                    android:id="@+id/cardTopic4"
                     android:layout_width="match_parent"
                     android:layout_height="85dp"
                     android:layout_marginBottom="10dp"
@@ -298,19 +308,21 @@
                             android:textStyle="bold" />
 
                         <ProgressBar
+                            android:id="@+id/progressTopic4"
                             style="?android:attr/progressBarStyleHorizontal"
                             android:layout_width="match_parent"
                             android:layout_height="8dp"
                             android:layout_marginTop="8dp"
-                            android:max="45"
-                            android:progress="20"
+                            android:max="100"
+                            android:progress="0"
                             android:progressTint="#2585F7"
                             android:progressBackgroundTint="#E4ECF7" />
 
                         <TextView
+                            android:id="@+id/tvCountTopic4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="20/45 words"
+                            android:text="0 words"
                             android:textColor="#596783"
                             android:textSize="12sp" />
 
@@ -327,6 +339,7 @@
 
                 <!-- HUMAN RESOURCES -->
                 <LinearLayout
+                    android:id="@+id/cardTopic5"
                     android:layout_width="match_parent"
                     android:layout_height="85dp"
                     android:layout_marginBottom="10dp"
@@ -359,19 +372,21 @@
                             android:textStyle="bold" />
 
                         <ProgressBar
+                            android:id="@+id/progressTopic5"
                             style="?android:attr/progressBarStyleHorizontal"
                             android:layout_width="match_parent"
                             android:layout_height="8dp"
                             android:layout_marginTop="8dp"
-                            android:max="35"
-                            android:progress="8"
+                            android:max="100"
+                            android:progress="0"
                             android:progressTint="#2585F7"
                             android:progressBackgroundTint="#E4ECF7" />
 
                         <TextView
+                            android:id="@+id/tvCountTopic5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="8/35 words"
+                            android:text="0 words"
                             android:textColor="#596783"
                             android:textSize="12sp" />
 

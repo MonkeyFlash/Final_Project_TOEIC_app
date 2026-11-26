@@ -32,6 +32,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tvTopicTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Office &amp; Business"
@@ -123,6 +124,7 @@
 
             <!-- DIVIDER -->
             <View
+                android:id="@+id/dividerLine"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="22dp"
